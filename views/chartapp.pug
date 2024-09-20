@@ -1,0 +1,129 @@
+doctype html
+html(lang='en')
+	head
+		// Required meta tags
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
+		//- link(rel='stylesheet' href='./bootstrap-4.5.2-dist/css/bootstrap.css')
+		link(rel='stylesheet' href='../stylesheets/customizedstyles.css')
+		title Title
+	body
+		.container-fluid.h-100
+			.row
+				nav.navbar.navbar-expand-lg.w-100.darkground
+					button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarcontent' aria-controls='navbarcontent' aria-expanded='false' aria-label='Toggle navigation')
+						span.navbar-toggler-icon
+					#navbarcontent.collapse.navbar-collapse.w-100
+						ul.navbar-nav.ml-auto
+							li.nav-item
+								a.nav-link(href='/') Home
+							li.nav-item
+								a.nav-link(href='/cityprofile') City profile
+							li.nav-item
+								a.nav-link(href='/mapapplication') Maps
+							li.nav-item.selected
+								a.nav-link(href='/chartapplication') Charts
+							li.nav-item
+								a.nav-link(href='/cwis') Indicators
+							li.nav-item
+								a.nav-link(href='/countryprofile') Country profile
+							li.nav-item
+								a.nav-link(href='/about') About
+			.row.h-100.body.chart
+				.col-3
+					.card-body
+						div
+							span Select a city
+							select#chartcityselector.custom-select
+								option(value=0 disabled selected) Select City
+								option(value='Bogura') Bogura
+								option(value='Cumilla') Cumilla
+								option(value='Faridpur') Faridpur
+								option(value='Gaibandha') Gaibandha
+								option(value='Joypurhat') Joypurhat
+								option(value='Madaripur') Madaripur
+								option(value='Magura') Magura
+								option(value='Narail') Narail
+								option(value='Rangpur') Rangpur
+								option(value='Sirajganj') Sirajganj
+								option(value='Lalmonirhat') Lalmonirhat
+								option(value='Chandpur') Chandpur
+								option(value='Chuadanga') Chuadanga
+								option(value='Munsiganj') Munsiganj
+					.card-body
+						div
+							span Chart type
+							.material-switch
+								input#barchartradio(type='radio' name='charttype' value='bar', checked, disabled)
+								label(for='barchartradio')
+								span Bar chart
+							.material-switch
+								input#piechartradio(type='radio' name='charttype' value='pie', disabled)
+								label(for='piechartradio')
+								span Pie chart
+							.material-switch
+								input#linechartradio(type='radio' name='charttype' value='line', disabled)
+								label(for='linechartradio')
+								span Line chart
+					.card-body
+						div
+							span Dataset 01
+							select#dataset01(disabled).custom-select
+								option(value=0) None
+								option(value='Q_2_1') Structure Type
+								option(value='Q_3_1') Drinking Water Source
+								option(value='Q_3_2') Containment-Tubewell Distance
+								option(value='Q_3_3') Drinking Water Collector
+								option(value='Q_4_4_1') Flush Type
+								option(value='Q_5_1' selected) Containment Type
+								option(value='Q_5_5') Containment Outlet
+								option(value='Q_5_8') Grey-water Outlet
+								option(value='Q_5_9') Ever Desludged
+								option(value='Q_5_10') Disludging Frequency
+								option(value='Q_5_12') Sludge Cleaner
+								option(value='Q_5_13') Desludging Process
+								option(value='Q_5_14') Suldge Disposal Location
+								option(value='Q_6_1') Access Road Type
+								option(value='Q_6_2') Access Vehicle Type
+								option(value='Q_6_3') Parking-Containment Distance
+								option(value='Q_7_4') Solid Waste Collector
+								option(value='Q_7_6') Waste Disposal Location
+								option(value='Q_8_1') Family Income
+							.pt-2
+								span Dataset 02
+								select#dataset02(disabled).custom-select
+									option(value=0) None
+									option(value='Q_5_6') Containment Construction Year
+									option(value='Q_5_11') Last Desludging Year
+							.pt-2
+								span Group by
+								select#groupby(disabled).custom-select
+									option(value=0) None
+									option(value='Q_2_1') Structure Type
+									option(value='Q_2_2') Floor Count
+									option(value='Q_3_2') Containment-Tubewell Distance
+									option(value='Q_5_1') Containment Type
+									option(value='Q_5_5') Containment Outlet
+									option(value='Q_5_9') Ever Desludged
+									option(value='Q_5_10') Disludging Frequency
+									option(value='Q_5_12') Sludge Cleaner
+									option(value='Q_5_13') Desludging Process
+									option(value='Q_5_14') Suldge Disposal Location
+									option(value='Q_6_1') Access Road Type
+									option(value='Q_6_2') Access Vehicle Type
+									option(value='Q_6_3') Parking-Containment Distance
+									option(value='Q_7_4') Solid Waste Collector
+									option(value='Q_7_6') Waste Disposal Location
+									option(value='Q_8_1') Family Income
+				.col-9
+					.chartpanel.card-body.h-100
+						canvas#chart
+		// Optional JavaScript
+		// jQuery first, then Popper.js, then Bootstrap JS
+		script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
+		script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js' integrity='sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=' crossorigin='anonymous')
+		script(src='../javascripts/chartapp.js')

@@ -1,0 +1,119 @@
+doctype html
+html(lang='en')
+	head
+		// Required meta tags
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' integrity='sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z' crossorigin='anonymous')
+		link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css' integrity='sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU' crossorigin='anonymous')
+		link(rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css')
+		link(rel='stylesheet' href='../stylesheets/customizedstyles.css')
+		title Title
+	body
+		.container-fluid.h-100
+			.row
+				nav.navbar.navbar-expand-lg.w-100.darkground
+					button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarcontent' aria-controls='navbarcontent' aria-expanded='false' aria-label='Toggle navigation')
+						span.navbar-toggler-icon
+					#navbarcontent.collapse.navbar-collapse.w-100
+						ul.navbar-nav.ml-auto
+							li.nav-item
+								a.nav-link(href='/') Home
+							li.nav-item
+								a.nav-link(href='/cityprofile') City profile
+							li.nav-item
+								a.nav-link(href='/mapapplication') Maps
+							li.nav-item
+								a.nav-link(href='/chartapplication') Charts
+							li.nav-item
+								a.nav-link(href='/cwis') Indicators
+							li.nav-item.selected
+								a.nav-link(href='/countryprofile') Country profile
+							li.nav-item
+								a.nav-link(href='/about') About
+			.row.h-100.body.indicators
+				.card-body
+					.row
+						.col-3.card-body
+							h4.h4 SDG 6.2 indicators for sanitation
+						.col-9.card-body
+							.row.row-cols-5.contentsbody.sdg
+								.col
+									.card-body
+										#safemanaged.bar
+										span#safemanagedvalue(style='color: #398E3D') 0%
+									.sdgtitle Safely managed
+								.col
+									.card-body
+										#basic.bar
+										span#basicvalue(style='color: #3EC744') 0%
+									.sdgtitle Basic
+								.col
+									.card-body
+										#limited.bar
+										span#limitedvalue(style='color: #FFE500') 0%
+									.sdgtitle Limited
+								.col
+									.card-body
+										#unimproved.bar
+										span#unimprovedvalue(style='color: #FFB303') 0%
+									.sdgtitle Unimproved
+								.col
+									.card-body
+										#opendefication.bar
+										span#opendeficationvalue(style='color: #F68282') 0%
+									.sdgtitle Open defication
+					.row.row-cols-2.pt-5
+						.col
+							h5.h5 Sanitation indicators
+							.row.row-cols-2.sanitationindicators
+								.col
+									.card-body.indicatorcard
+										.row.h-100
+											.col-8
+												span <em>00%</em>
+												br
+												span Percentage of population with access to improved individual toilets
+											.col-4
+												.card-body
+													i.fa.fa-users.fa-2x
+								.col
+									.card-body.indicatorcard
+										.row.h-100
+											.col-8
+												span <em>00%</em>
+												br
+												span Percentage 
+											.col-4
+												.card-body
+													i.fa.fa-users.fa-2x
+						.col
+							h5.h5 SWM indicators
+							.row.row-cols-2.swmindicators
+								.col
+									.card-body.indicatorcard
+										.row.h-100
+											.col-8
+												span <em>00%</em>
+												br
+												span Percentage of population with access to improved individual toilets
+											.col-4
+												.card-body
+													i.fa.fa-users.fa-2x
+								.col
+									.card-body.indicatorcard
+										.row.h-100
+											.col-8
+												span <em>00%</em>
+												br
+												span Percentage 
+											.col-4
+												.card-body
+													i.fa.fa-users.fa-2x
+
+		script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
+		script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js' integrity='sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=' crossorigin='anonymous')
+		script(src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js')
+		script(src='https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js')

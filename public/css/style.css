@@ -1,0 +1,162 @@
+.indicators{
+    height:92px;
+    width: 195px;
+    margin-left: 15px;
+    padding-left: 70px;
+}
+
+.GI{
+    height:67px;
+    width:200px;
+    margin-left: 70px;
+    margin-top: 13px;
+}
+
+.Inf{
+    height:67px;
+    width:67px;
+    margin-left: 85px;
+    margin-top: 13px;
+}
+
+.Cap{
+    height:67px;
+    width:190px;
+    margin-left: 10px;
+    margin-top: 13px;
+}
+
+.Inf-Map{
+    height:600px;
+    width:990px;
+    background-color:white;
+    margin-left: 85px;
+    float: left;
+}
+
+.Inf-1{
+    height:67px;
+    width:120px;
+    margin-left: 35px;
+    margin-top:15px;
+}
+
+
+
+#Safely,
+#Basic,
+#Limited,
+#Unimproved,
+#OD
+{
+    position: absolute;
+    top: 30px;
+    left: 35px;
+}
+#progress1{
+    position: absolute;
+    top: 30px;
+    left: 49px;
+}
+
+.progress{
+    position: relative;
+    height:60px;
+    margin: 4px;
+    float:left;
+    text-align: center;
+    background: none;
+    margin-left: 0px;
+    margin-top: 15px;
+}
+
+.lbl1{
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 12px;
+    color:#2F4B7C;
+    text-align: center;
+}
+
+.lbl2{
+    position: absolute;
+    top: 45px;
+    left: 32px;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 12px;
+    color:#2F4B7C;
+    text-align: center;
+}
+
+.lbl3{
+    position: absolute;
+    top: 45px;
+    left: 25px;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 12px;
+    color:#2F4B7C;
+    text-align: center;
+}
+
+.lbl4{
+    position: absolute;
+    top: 45px;
+    left: 15px;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 12px;
+    color:#2F4B7C;
+    text-align: center;
+}
+.barOverflow{ 
+    position: relative;
+    overflow: hidden; 
+    width: 90px; 
+    height: 45px; 
+    margin-bottom: -14px;
+}
+.bar{
+    position: absolute;
+    top: 0; left: 0;
+    width: 90px; height: 90px; 
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 10px solid #EEEEEE;    
+}
+
+.safely{
+    border-bottom-color: #398E3D;  
+    border-right-color: #398E3D;
+}
+
+.basic{
+    border-bottom-color: #3EC744;  
+    border-right-color: #3EC744;
+}
+
+.limited{
+    border-bottom-color: #FFE500;  
+    border-right-color: #FFE500;
+}
+
+.unimproved{
+    border-bottom-color: #FFB303;  
+    border-right-color: #FFB303;
+}
+
+.od{
+    border-bottom-color: #F68282;  
+    border-right-color: #F68282;
+}
+
+
+#yel .row1,
+#yel .row2
+{
+    color:#FFA600;
+}

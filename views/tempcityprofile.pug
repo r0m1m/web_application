@@ -1,0 +1,517 @@
+doctype html
+html(lang='en')
+	head
+		// Required meta tags
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
+		//- link(rel='stylesheet' href='./bootstrap-4.5.2-dist/css/bootstrap.css')
+		link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css' integrity='sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU' crossorigin='anonymous')
+		link(rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css")
+		link(rel='stylesheet' href='../stylesheets/customizedstyles.css')
+		title Title
+	body
+		.container-fluid.h-100
+			.row
+				nav.navbar.navbar-expand-lg.w-100.darkground
+					button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarcontent' aria-controls='navbarcontent' aria-expanded='false' aria-label='Toggle navigation')
+						span.navbar-toggler-icon
+					#navbarcontent.collapse.navbar-collapse.w-100
+						ul.navbar-nav.ml-auto
+							li.nav-item
+								a.nav-link(href='/') Home
+							li.nav-item.selected
+								a.nav-link(href='/cityprofile') City profile
+							li.nav-item
+								a.nav-link(href='/mapapplication') Maps
+							li.nav-item
+								a.nav-link(href='/chartapplication') Charts
+							li.nav-item
+								a.nav-link(href='/cwis') Indicators
+							li.nav-item
+								a.nav-link(href='/countryprofile') Country profile
+							li.nav-item
+								a.nav-link(href='/about') About
+			.row.h-100.body.cityprofile
+				.col-10.scrollbody
+					h2#cityname.text-center City Name, Year
+					br
+					.row
+						.col-12
+							#overview.row.section
+								.col-12.sectionbody
+									h3.header Overview
+									.card-body.contents
+										.row
+											.col-3
+												.card-body
+													span SDG Indicators for Sanitation
+											.col-9
+												.row.row-cols-5.contentsbody.sdg
+													.col
+														.card-body
+															#safemanaged.bar
+															span#safemanagedvalue(style='color: #398E3D') 0%
+														.sdgtitle Safely managed
+													.col
+														.card-body
+															#basic.bar
+															span#basicvalue(style='color: #3EC744') 0%
+														.sdgtitle Basic
+													.col
+														.card-body
+															#limited.bar
+															span#limitedvalue(style='color: #FFE500') 0%
+														.sdgtitle Limited
+													.col
+														.card-body
+															#unimproved.bar
+															span#unimprovedvalue(style='color: #FFB303') 0%
+														.sdgtitle Unimproved
+													.col
+														.card-body
+															#opendefication.bar
+															span#opendeficationvalue(style='color: #F68282') 0%
+														.sdgtitle Open defication
+										.row
+											.col-3
+												.card-body
+													span General Information
+											.col-9
+												.row.row-cols-4.contentsbody
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-drafting-compass.fa-2x
+																.col-9
+																	span Area <br>
+																	span#area <em>00</em>
+																	|  Km<sup>2</sup>
+
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-user-friends.fa-2x
+																.col-9
+																	span Population <br>
+																	span#population <em>00</em>
+																	|  K
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-users.fa-2x
+																.col-9
+																	span Density <br>
+																	span#density <em>00</em>
+																	|  /Km<sup>2</sup>
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-layer-group.fa-2x
+																.col-9
+																	span Wards <br>
+																	span#wards <em>00</em>
+										.row
+											.col-3
+												.card-body
+													span FSM Summary
+											.col-9
+												.row.row-cols-4.contentsbody.orangecontents
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-poop.fa-2x
+																.col-9
+																	span FS Generation <br>
+																	span#fs_generation <em>00</em>
+																	|  m<sup>3</sup>/day
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-truck.fa-2x
+																.col-9
+																	span FS Collection <br>
+																	span#fs_collection <em>00</em>
+																	|  %
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-poo.fa-2x
+																.col-9
+																	span FS Treatment <br>
+																	span#fs_treatment <em>00</em>
+																	|  %
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-industry.fa-2x
+																.col-9
+																	span FSTP<br>
+																	span#fstp <em>00</em>
+										.row
+											.col-3
+												.card-body
+													span SWM Summary
+											.col-9
+												.row.row-cols-4.contentsbody
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-trash-alt.fa-2x
+																.col-9
+																	span SW Generation <br>
+																	span#sw_generation <em>00</em>
+																	|  ton/day
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-dolly.fa-2x
+																.col-9
+																	span SW Collection <br>
+																	span#sw_collection <em>00</em>
+																	|  %
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-quidditch.fa-2x
+																.col-9
+																	span SW Treatment <br>
+																	span#sw_treatment <em>00</em>
+																	|  %
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-recycle.fa-2x
+																.col-9
+																	span SWTP<br>
+																	span#swtp <em>00</em>
+							#Infrastructure.row.section
+								.col-12.sectionbody
+									h3.header Infrastructure
+									.card-body.contents
+										.row
+											.col-3
+												.card-body
+													span Tools used by Conservancy Department
+											.col-9
+												.row.row-cols-4.contentsbody
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-trash.fa-2x
+																.col-9
+																	span Dustbin <br>
+																	span#dustbin <em>00</em>
+													//- .col
+													//- 	.card-body
+													//- 		.row
+													//- 			.col-3
+													//- 				span
+													//- 					i.fas.fa-trash-alt.fa-2x
+													//- 			.col-9
+													//- 				span Informal bin <br>
+													//- 				span#informal_bin <em>00</em>
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-warehouse.fa-2x
+																.col-9
+																	span STS <br>
+																	span#sts <em>00</em>
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-truck.fa-2x
+																.col-9
+																	span Vacuum Tanker<br>
+																	span#vaccum_tanker <em>00</em>
+										.row
+											.col-3
+												.card-body
+													span Vehicles used in SWM
+											.col-9
+												.row.row-cols-4.contentsbody.orangecontents
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-truck-moving.fa-2x
+																.col-9
+																	span Compactor <br>
+																	span#truck <em>00</em>
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-truck-loading.fa-2x
+																.col-9
+																	span Dump Truck <br>
+																	span#dump_truck <em>00</em>
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-truck-pickup.fa-2x
+																.col-9
+																	span Others <br>
+																	span#pick_up <em>00</em>
+													.col
+														.card-body
+															.row
+																.col-3
+																	span
+																		i.fas.fa-shopping-cart.fa-2x
+																.col-9
+																	span Trolley<br>
+																	span#trolley <em>00</em>
+										.row.contentsbody
+											.col-3
+												.card-body
+													span FSM & SWM Infrastructure Map
+											.col-9
+												.card-body Map
+													#map
+							#ic.row.section
+								.col-12.sectionbody
+									h3.header Institutional Capacity
+									.card-body.contents
+										.row
+											.col-3
+												.card-body
+													span Human Resources
+											.col-9
+												.row.row-cols-5.contentsbody
+													.col
+														.row.card-body
+															.col-12
+																span Conservancy Officials <br>
+																	span#conservancy_officials <em>00</em>
+													.col
+														.row.card-body
+															.row
+																span Waste Collectors <br>
+																	span#waste_collectors <em>00</em>
+													.col
+														.row.card-body
+															.row
+																span Pit Cleaners <br>
+																	span#pit_cleaners <em>00</em>
+													.col
+														.row.card-body
+															.row
+																span Road Collectors <br>
+																	span#road_collectors <em>00</em>
+													.col
+														.row.card-body
+															.row
+																span Private pit cleaners<br>
+																	span#private_pit_cleaners <em>00</em>
+										//- .row.contentsbody
+										//- 	.col-3
+										//- 		.card-body
+										//- 			span Organogram
+										//- 	.col-9
+										//- 		.card-body Organogram
+										//- 			.graphholder
+										//- 				img.img-fluid(src="../images/org.jpg" alt="Organogram")
+							#FSM.row.section
+								.col-12.sectionbody
+									h3.header Sanitation
+									.card-body.contentsbody
+										.card-body
+											span Shit Flow Diagram (SFD)
+											.row.card-body
+												.col-8.offset-2
+													img#sfdimage.img-fluid(src="../images/sfd.jpg" alt="SFD")
+										.card-body
+											span Faecal Sludge Life Cycle
+											#sankeybody.card-body
+										.row.row-cols-2
+											.col
+												.card-body
+													span Threat to Groundwater Contamination
+													#gc_sunbody.card-body
+													#gc_suncrumb.card-body
+											.col
+												.card-body.h-100
+													span Containment Accessibility Scenario
+													#ca_sunbody.card-body
+													#ca_suncrumb.card-body
+										.card-body
+											span Containment Outlet Behavior
+											.row
+												.col-6.offset-3
+													.card-body
+														canvas#bg_chart
+							#SWM.row.section
+								.col-12.sectionbody
+									h3.header Solid Waste Management
+									.card-body.contentsbody
+										.card-body
+											span Solid Waste Life Cycle
+											#wastesankey.card-body
+										.row
+											.col-6.offset-3
+												.card-body
+													span Solid Waste Disposal Practice
+													#sunburstbody.card-body
+													#sunburstcrumbs.card-body
+							//- #indicators.row.section
+							//- 	.col-12.sectionbody
+							//- 		h3.header Indicators
+							//- 		.card-body
+							//- 			h5.h5 Sanitation
+							//- 			.row.row-cols-3.sanitationindicators
+							//- 				.col
+							//- 					.card-body.indicatorcard
+							//- 						.row.h-100
+							//- 							.col-8
+							//- 								span#fi1 00%
+							//- 								br
+							//- 								span Percentage of population with access to improved individual toilets
+							//- 							.col-4
+							//- 								.card-body
+							//- 									i.fa.fa-users.fa-2x
+							//- 				.col
+							//- 					.card-body.indicatorcard
+							//- 						.row.h-100
+							//- 							.col-8
+							//- 								span#fi1 00%
+							//- 								br
+							//- 								span Percentage of population with access to improved individual toilets
+							//- 							.col-4
+							//- 								.card-body
+							//- 									i.fa.fa-users.fa-2x
+							//- 				.col
+							//- 					.card-body.indicatorcard
+							//- 						.row.h-100
+							//- 							.col-8
+							//- 								span#fi1 00%
+							//- 								br
+							//- 								span Willingess to pay for containment improvement in percentage
+							//- 							.col-4
+							//- 								.card-body
+							//- 									i.fa.fa-users.fa-2x
+							//- 		.card-body
+							//- 			h5.h5 Solid waste
+							//- 			.row.row-cols-3.swmindicators
+							//- 				.col
+							//- 					.card-body.indicatorcard
+							//- 						.row.h-100
+							//- 							.col-8
+							//- 								span#fi1 00%
+							//- 								br
+							//- 								span Percentage of waste segregation at source
+							//- 							.col-4
+							//- 								.card-body
+							//- 									i.fa.fa-users.fa-2x
+							//- 				.col
+							//- 					.card-body.indicatorcard
+							//- 						.row.h-100
+							//- 							.col-8
+							//- 								span#fi1 00%
+							//- 								br
+							//- 								span Percentage of waste collects by the van operated by ULB
+							//- 							.col-4
+							//- 								.card-body
+							//- 									i.fa.fa-users.fa-2x
+							//- 				.col
+							//- 					.card-body.indicatorcard
+							//- 						.row.h-100
+							//- 							.col-8
+							//- 								span#fi1 00%
+							//- 								br
+							//- 								span Collection efficiency in percentage non-slum area
+							//- 							.col-4
+							//- 								.card-body
+							//- 									i.fa.fa-users.fa-2x
+
+				.col-2.fixedbody
+					.card-body
+						span Select a city
+							select#chartcityselector.custom-select(dir='rtl')
+								option(value=0 disabled) Select City
+								option(value='Bogura') Bogura
+								option(value='Cumilla' selected) Cumilla
+								option(value='Faridpur') Faridpur
+								option(value='Gaibandha') Gaibandha
+								option(value='Joypurhat') Joypurhat
+								option(value='Madaripur') Madaripur
+								option(value='Magura') Magura
+								option(value='Narail') Narail
+								option(value='Rangpur') Rangpur
+								option(value='Sirajganj') Sirajganj
+								option(value='Lalmonirhat') Lalmonirhat
+								option(value='Chandpur') Chandpur
+								option(value='Chuadanga') Chuadanga
+								option(value='Munsiganj') Munsiganj
+
+					.card-body
+						span Select a year
+							select.custom-select(dir='rtl')
+								option(value=0 disabled) Select year
+								option(value='2020' selected) 2020
+								option(value='2021' disabled) 2021
+								option(value='2022' disabled) 2022
+								option(value='2023' disabled) 2023
+					.card-body
+						a(href='#overview')
+							h6 Overview
+						a(href='#Infrastructure')
+							h6 Infrastructure
+						a(href='#ic')
+							h6 Institutional capacity
+						a(href='#FSM')
+							h6 Sanitation
+						a(href='#SWM')
+							//- h6 SWM
+						//- a(href='#indicators')
+						//- 	h6 Indicators
+
+		// Optional JavaScript
+		// jQuery first, then Popper.js, then Bootstrap JS
+		script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
+		script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js' integrity='sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=' crossorigin='anonymous')
+		script(src='https://d3js.org/d3.v5.min.js')
+		script(src='https://unpkg.com/d3-sankey@0')
+		script(src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js")
+		script(src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js")
+		script(src='../javascripts/gc_sunburst.js')
+		script(src='../javascripts/cityprofile.js')
+		script(src='../javascripts/sankey.js')

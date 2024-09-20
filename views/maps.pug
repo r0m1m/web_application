@@ -1,0 +1,194 @@
+doctype html
+html(lang='en')
+	head
+		// Required meta tags
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
+		//- link(rel='stylesheet' href='./bootstrap-4.5.2-dist/css/bootstrap.css')
+		link(rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css")
+		link(rel='stylesheet' href='../stylesheets/customizedstyles.css')
+		title Title
+	body
+		.container-fluid.h-100
+			.row
+				nav.navbar.navbar-expand-lg.w-100.darkground
+					button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarcontent' aria-controls='navbarcontent' aria-expanded='false' aria-label='Toggle navigation')
+						span.navbar-toggler-icon
+					#navbarcontent.collapse.navbar-collapse.w-100
+						ul.navbar-nav.ml-auto
+							li.nav-item
+								a.nav-link(href='/') Home
+							li.nav-item
+								a.nav-link(href='/cityprofile') City profile
+							li.nav-item.selected
+								a.nav-link(href='/mapapplication') Maps
+							li.nav-item
+								a.nav-link(href='/chartapplication') Charts
+							li.nav-item
+								a.nav-link(href='/cwis') Indicators
+							li.nav-item
+								a.nav-link(href='/countryprofile') Country profile
+							li.nav-item
+								a.nav-link(href='/about') About
+			.row.h-100.body.map
+				.col-3.h-100.scrollbody
+					.card-body
+						div
+							span Select a city
+							select#chartcityselector.custom-select
+								option(value=0 disabled selected) Select City
+								option(value='Bogura') Bogura
+								option(value='Cumilla' selected) Cumilla
+								option(value='Faridpur') Faridpur
+								option(value='Gaibandha') Gaibandha
+								option(value='Joypurhat') Joypurhat
+								option(value='Madaripur') Madaripur
+								option(value='Magura') Magura
+								option(value='Narail') Narail
+								option(value='Rangpur') Rangpur
+								option(value='Sirajganj') Sirajganj
+								option(value='Lalmonirhat') Lalmonirhat
+								option(value='Chandpur') Chandpur
+								option(value='Chuadanga') Chuadanga
+								option(value='Munsiganj') Munsiganj
+					.card-body
+						h6 Map type
+						.card-body
+							h6 Demography
+							.card-body
+								.material-switch
+									input#indicatord1(type='radio' name='indicators' value='d1')
+									label(for='indicatord1')
+									span Population
+								.material-switch
+									input#indicatord2(type='radio' name='indicators' value='d2')
+									label(for='indicatord2')
+									span Density
+								.material-switch
+									input#indicatord3(type='radio' name='indicators' value='d3')
+									label(for='indicatord3')
+									span Population change
+							h6 CWIS
+							.card-body
+								span Access and Equity
+								.card-body
+									.material-switch
+										input#indicatorf1(type='radio' name='indicators' value='f1')
+										label(for='indicatorf1')
+										span Percentage of population with access to improved individual toilets
+									.material-switch
+										input#indicatorf2(type='radio' name='indicators' value='f9')
+										label(for='indicatorf2')
+										span Willingness to improve toilet
+									.material-switch
+										input#indicatorf3(type='radio' name='indicators' value='f10')
+										label(for='indicatorf3')
+										span Willingness to improve containment
+								span Environmental Safety
+								.card-body
+									.material-switch
+										input#indicatorf4(type='radio' name='indicators' value='f8')
+										label(for='indicatorf4')
+										span Percent of containments accessible
+									.material-switch
+										input#indicatorf5(type='radio' name='indicators' value='f4')
+										label(for='indicatorf5')
+										span Percent of containments emptied at least once
+									.material-switch
+										input#indicatorf6(type='radio' name='indicators' value='f5')
+										label(for='indicatorf6')
+										span Percent of containments emptied within last 2 years
+								span Worker Safety
+								.card-body
+									.material-switch
+										input#indicatorf7(type='radio' name='indicators' value='f6')
+										label(for='indicatorf7')
+										span Percent of containments emptied in mechanical process
+									.material-switch
+										input#indicatorf8(type='radio' name='indicators' value='f7')
+										label(for='indicatorf8')
+										span Percent of sludge transported to treatment plant
+								span Sustainability
+								.card-body
+									.material-switch
+										input#indicatorf9(type='radio' name='indicators' value='f11')
+										label(for='indicatorf9')
+										span Willingness to improve service
+									.material-switch
+										input#indicatorf10(type='radio' name='indicators' value='f11')
+										label(for='indicatorf10')
+										span FS treatment capacity
+								span Health Outcome
+								.card-body
+									.material-switch
+										input#indicatorf11(type='radio' name='indicators' value='f11')
+										label(for='indicatorf11')
+										span Percentage of water contamination compliance 
+							h6 Solid Waste Management (SWM)
+							.card-body
+								span Segregation and Collection
+								.card-body
+									.material-switch
+										input#indicators1(type='radio' name='indicators' value='s1')
+										label(for='indicators1')
+										span Percent of HH - segregate SW 
+									.material-switch
+										input#indicators2(type='radio' name='indicators' value='s2')
+										label(for='indicators2')
+										span Percent of HH - door to door collection
+									.material-switch
+										input#indicators3(type='radio' name='indicators' value='s2')
+										label(for='indicators3')
+										span Percent of HH - covered by ULB
+									.material-switch
+										input#indicators4(type='radio' name='indicators' value='s2')
+										label(for='indicators4')
+										span Percent of HH - covered by other agencies
+								span Service Delivery
+								.card-body
+									.material-switch
+										input#indicators5(type='radio' name='indicators' value='s3')
+										label(for='indicators5')
+										span Efficiency in collection of SWM charges
+									.material-switch
+										input#indicators6(type='radio' name='indicators' value='s3')
+										label(for='indicators6')
+										span Percent of households willing to pay for improved service
+								span Disposal & Treatment
+								.card-body
+									.material-switch
+										input#indicators7(type='radio' name='indicators' value='s3')
+										label(for='indicators7')
+										span Extent of scientific disposal of waste at landfill site
+									.material-switch
+										input#indicators8(type='radio' name='indicators' value='s3')
+										label(for='indicators8')
+										span Treatment capacity
+								span Reuse
+								.card-body
+									.material-switch
+										input#indicators9(type='radio' name='indicators' value='s3')
+										label(for='indicators9')
+										span Extent of recovery of waste collected
+								span Market
+								.card-body
+									.material-switch
+										input#indicators10(type='radio' name='indicators' value='s3')
+										label(for='indicators10')
+										span PSP in secondary collection and transportation
+									.material-switch
+										input#indicators11(type='radio' name='indicators' value='s3')
+										label(for='indicators11')
+										span PSP in treatment and disposal
+				.col-9.h-100
+					#map.card-body.h-100
+		// Optional JavaScript
+		// jQuery first, then Popper.js, then Bootstrap JS
+		script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
+		script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js' integrity='sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=' crossorigin='anonymous')
+		script(src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js")
+		script(src='../javascripts/tempmapapp.js')

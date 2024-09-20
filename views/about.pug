@@ -1,0 +1,72 @@
+doctype html
+html(lang='en')
+	head
+		// Required meta tags
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
+		//- link(rel='stylesheet' href='./bootstrap-4.5.2-dist/css/bootstrap.css')
+		link(rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css")
+		link(rel='stylesheet' href='../stylesheets/customizedstyles.css')
+		title Title
+	body
+		.container-fluid.h-100
+			.row
+				nav.navbar.navbar-expand-lg.w-100.lightground
+					button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarcontent' aria-controls='navbarcontent' aria-expanded='false' aria-label='Toggle navigation')
+						span.navbar-toggler-icon
+					#navbarcontent.collapse.navbar-collapse.w-100
+						ul.navbar-nav.ml-auto
+							li.nav-item
+								a.nav-link(href='/') Home
+							li.nav-item
+								a.nav-link(href='/cityprofile') City profile
+							li.nav-item
+								a.nav-link(href='/mapapplication') Maps
+							li.nav-item
+								a.nav-link(href='/chartapplication') Charts
+							li.nav-item
+								a.nav-link(href='/cwis') Indicators
+							li.nav-item
+								a.nav-link(href='/countryprofile') Country profile
+							li.nav-item.selected
+								a.nav-link(href='/about') About
+			.row.body.about
+				.col-3.offset-1
+					img(src="/images/dphe_logo.png" alt="DPHE logo" width="8%")
+					h6.headertitle Department of Public Health Engineering
+					p.headerdescription Ministry of Local Government, Rural Development & Cooperation<br>Government of People's Republic of Bangladesh
+					p.projecttitle Feasibility for Implementing GIS & IT Based <br>Faecal Sludge & Solid Waste Management System<br>
+						span.titleext in 53 Paurashavas & 8 City Corporations
+					.row.logoholder
+						.col-6
+							.card-body
+								img(src="/images/devcon_logo.png" alt="Devcon logo" width="70%")
+						.col-6
+							.card-body
+								img(src="/images/tiller_logo.png" alt="Devcon logo" width="30%")
+				.col-5.offset-3
+					br
+					br
+					h6.descriptionheader 1. Background of the project
+					p.descriptiontext -- (detail description will go here)
+					h6.descriptionheader 2. How to use the dashboard
+					p.descriptiontext -- (detail description will go here)
+					h6.descriptionheader 3. Methodology adopted
+					p.descriptiontext -- (detail methodological approach will go here)
+					h6.descriptionheader 4. How to download data
+					p.descriptiontext -- (detail description will go here)
+					h6.descriptionheader 5. How to update data
+					p.descriptiontext -- (detail description will go here)
+
+					//- .descriptiondiv
+					//-   p.descriptiontext The huge population growth in Bangladesh and rapid urbanization of the cities and towns are the most challenging factors to improve the life and living of all its 16 million people. Especially in urban areas, rapid growth is found responsible for degrading the urban environment, public health, and creating high stress to the already inadequate basic urban service and infrastructure. The lack of the two urban waste management services in the urban areas of Bangladesh are degrading the urban environment, and causing serious public health threat, are faecal sludge management (FSM) and solid waste management (SWM). The economic growth of the country cause rapid urbanization but the urban local authorities do not have the capacity to keep pace with such a big scale of increase in population density. The greater the amount of wastes is being generated, it is increasing the negative impact on the environment and public health. On the other hand, the citizens and municipal governments are demanding improvements in services. The unmanaged waste enters into the natural environment system in a different form and becomes harmful for public health. According to the JMP 2015 report, about 61% of the country’s population was reported using improved sanitation facilities which are not shared. While the overall percentage of the population without any toilet facility is very low at about 1%, this proportion among the poorest quintile households was found to be about 14%. Despite the presence of toilets, many are unhygienic and most sludge ends up untreated in the environment; drains, waterways, and marginal land. Therefore, faecal sludge collected in sanitation facilities needs to be managed and treated to protect public health and the environment, but the FSM value chain beyond household containment is still underdeveloped. This poses a public health risk that will undermine the strong progress made in increasing toilet and latrine coverage. This situation is likely to deteriorate as the country continues to urbanize, so sustainable solutions that respond to the complexities of urban sanitation in Bangladesh are desperately needed. Bangladesh stands out as a country that has made remarkable progress in eliminating the scourge of open defecation. However, this success has created a ‘second-generation’ sanitation challenge of how to deal safely with the faecal sludge collected from pit latrines and septic tanks. As on-site sanitation solutions develop, the question of sustainable and inclusive waste and faecal sludge management (FSM) is now at the heart of the challenge in Bangladesh. In this situation introduction of effective and feasible technologies for ensuring at least a basic service to the peoples of the city 8 city corporations and 53 District towns in a sustainable manner is very important. For that a rapid assessment for those 8 city corporations and 53 District towns is indispensable to determine the area and population to be served, the demand of the service, options of the technological solutions in FSM and Solid Waste Management Chain, public acceptance and willingness to pay, required investment, operation and maintenance, and other aspects. To address these growing concerns, particularly for the cities and large towns where the problem is acute, Department of Public Health Engineering (DPHE) has taken up a Technical Assistance Project named, “Feasibility for Implementing of Solid Waste and Faecal Sludge Management System in 53 District Level Paurashavas and 8 City Corporations”. Combining FSM and SWM in one package will have synergy in the planning, implementation, operations, and maintenance of the systems. The Bill & Melinda Gates Foundation (BMGF) has provided technical and financial support for this project. The Department of Public Health Engineering (DPHE) is the implementing agency of the project and had engaged DevConsultants Limited (DevCon), in association with Tiller, as the Consultant to carry out a study, namely, “Rapid Assessment for Establishing IT and GIS Based Smart Solid Waste & Faecal Sludge Management Systems”. The results of the study will be a basis for preparing investment projects by the government and development partners, and sustainable plans for operating and maintaining the systems by the City authorities.
+					// Optional JavaScript
+					// jQuery first, then Popper.js, then Bootstrap JS
+					script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+					script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous')
+					script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous')
+					script(src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js' integrity='sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=' crossorigin='anonymous')
+					script(src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js")
+					script(src='../javascripts/mapapplication.js')

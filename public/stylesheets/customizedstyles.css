@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
+
+
+html,
+body {
+    background-image: url("../images/back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color:  #2F4B7C;
+}
+
+.body {
+    padding-top: 6em;
+}
+
+.darkground {
+    background-color: #2F4B7C;
+}
+
+.lightground {
+    background-color: white;
+}
+
+/* Navbar styles */
+.navbar {
+    position: absolute;
+}
+
+.navbar {
+    padding: 2em 1.5em 1em 1.5em;
+}
+
+.darkground .nav-item a {
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    margin-left: 1.5em;
+}
+
+.lightground .nav-item a {
+    color: #2F4B7C;
+    font-size: small;
+    font-weight: bold;
+    margin-left: 1.5em;
+}
+
+.nav-item.selected a {
+    color: #FFA600;
+}
+
+/* homepage components */
+.home .headertitle {
+    font-size: 1.5em;
+    margin-top: .75em;
+    font-weight: bold;
+    color: #2F4B7C
+}
+
+.home .headerdescription {
+    margin-top: .75em;
+    font-weight: normal;
+    font-style: italic;
+    font-size: .75em;
+    color: #2F4B7C
+}
+
+.home .projecttitle {
+    margin-top: 1.5em;
+    font-weight: Bolder;
+    font-style: italic;
+    font-size: 2em;
+    color: #2F4B7C;
+}
+
+.home .projecttitle .titleext {
+    font-weight: normal;
+    font-style: italic;
+    font-size: .5em;
+    color: #2F4B7C
+}
+
+.learnbtn {
+    background-color: #2F4B7C;
+    border-color: #2F4B7C;
+}
+
+/* about page components */
+.about .headertitle {
+    font-size: 1em;
+    margin-top: .75em;
+    font-weight: normal;
+    color: #2F4B7C
+}
+
+.about .headerdescription {
+    margin-top: .15em;
+    font-weight: normal;
+    font-size: .65em;
+    color: #2F4B7C
+}
+
+.about .projecttitle {
+    margin-top: 3em;
+    font-weight: Bolder;
+    font-size: 1em;
+    color: #2F4B7C
+}
+
+.about .projecttitle .titleext {
+    font-weight: normal;
+    font-style: italic;
+    font-size: .75em;
+    color: #2F4B7C
+}
+
+.descriptionheader {
+    font-weight: Bolder;
+    font-size: 1em;
+    color: #2F4B7C
+}
+
+.descriptiondiv {
+    overflow-y: scroll;
+    max-height: 45%;
+}
+
+/* chart application page */
+.chart .card-body {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chart {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* city profile page */
+.cityprofile {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cityprofile .card-body {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.scrollbody {
+    overflow: auto;
+    max-height: 100%;
+}
+
+.contents>.row {
+    margin-top: 1em;
+}
+
+.contents> :first-child {
+    margin-bottom: 3em;
+}
+
+.scrollbody .header {
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: bolder;
+    color: #2F4B7C;
+}
+
+.sectionbody {
+    padding: 0em 2em 0em 3em;
+}
+
+.sectionbody .card-body {
+    border-top: .01em solid rgba(0, 0, 0, 0.1);
+}
+
+.contentsbody {
+    text-align: left;
+}
+
+.contents .card-body {
+    border-top: 0em;
+    border-right: .05em solid rgba(0, 0, 0, 0.03);
+}
+
+.sdg .card-body {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.sdgtitle {
+    text-align: center;
+    color: #2F4B7C;
+}
+
+.bar {
+    position: absolute;
+    top: .5em;
+    width: 7em;
+    height: 7em;
+    box-sizing: border-box;
+    border: 1em solid #EEEEEE;
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.sdg span {
+    position: absolute;
+    bottom: 0em;
+    color: red;
+    font-weight: bold;
+    align-self: end;
+}
+
+#safemanaged {
+    border-bottom-color: #398E3D;
+    border-right-color: #398E3D;
+}
+
+#basic {
+    border-bottom-color: #3EC744;
+    border-right-color: #3EC744;
+}
+
+#limited {
+    border-bottom-color: #FFE500;
+    border-right-color: #FFE500;
+}
+
+#unimproved {
+    border-bottom-color: #FFB303;
+    border-right-color: #FFB303;
+}
+
+#opendefication {
+    border-bottom-color: #F68282;
+    border-right-color: #F68282;
+}
+
+.contentsbody .col {
+    padding: 0em;
+}
+
+.contentsbody .card-body {
+    border: 0em;
+    color: #2F4B7C;
+}
+
+.orangecontents .card-body {
+    color: #FFA600;
+}
+
+#map {
+    height: 800px;
+    background-color: black;
+}
+
+.graphholder {
+    min-height: 400px;
+    background-color: yellow;
+}
+
+.bottom {
+    height: .3em;
+    background-color: #FFA600;
+    position: relative;
+}
+
+.bottom::after {
+    content: '\A';
+    position: absolute;
+    background: #2F4B7C;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+}
+
+.indiname {
+    position: relative;
+}
+
+.indiname span {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: .5em;
+}
+
+.dataholder {
+    background-color: #2F4B7C;
+    color: white;
+    height: 3em;
+    text-align: center;
+    font-weight: bold;
+    line-height: 3em;
+}
+
+.fixedbody {
+    padding: 0em 1.5em 0em .25em;
+    text-align: right;
+}
+
+.fixedbody h6 {
+    color: rgb(78, 77, 77);
+}
+
+
+/* map application page */
+.map {
+    background-color: rgba(255, 255, 255, 0.90);
+    color:  #2F4B7C;
+}
+
+.map .scrollbody .card-body .card-body .card-body{
+    padding-top: 0em;
+    padding-right: 0em;
+}
+/* Indicators page */
+.indicators {
+    color: #2F4B7C;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.indicators .card-body {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.indicators h6 {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.indicators .scrollbody .card-body .card-body{
+    padding-top: 0em;
+    padding-right: 0em;
+}
+.sanitationindicators .card-body{
+    position: relative;
+}
+
+.swmindicators .card-body{
+    position: relative;
+}
+
+.indicatorcard{
+    border: .125em solid rgb(214, 214, 214);
+    border-left: 0em;
+    padding: 2em;
+    padding-left: 3em;
+    padding-right: 0em;
+    height: 100%;
+}
+
+.sanitationindicators .indicatorcard::before{
+    content: '';
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color: #2F4B7C;
+    width: 3%;
+}
+.swmindicators .indicatorcard::before{
+    content: '';
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color:  #FFA600;
+    width: 3%;
+}
+
+.indicatorcard .card-body {
+    height: 100%;
+    text-align: center;
+    border: 0em;
+    border-left: .125em solid rgb(214, 214, 214);
+}
+
+/* Radio button */
+.material-switch {
+    padding: .25em 0em .25em 0em;
+}
+
+.material-switch span {
+    font-size: .85em;
+}
+
+.material-switch>input[type="radio"] {
+    display: none;
+}
+
+.material-switch>label {
+    cursor: pointer;
+    height: 0em;
+    position: relative;
+    width: 2.5em;
+}
+
+.material-switch>label::before {
+    background: transparent;
+    /* box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5); */
+    border: .05em solid#2F4B7C;
+    border-radius: .5em;
+    left: 0em;
+    content: '';
+    height: .5em;
+    align-content: center;
+    /* margin-top: -.5em; */
+    position: absolute;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+    width: 2em;
+}
+
+.material-switch>label::after {
+    background: #2F4B7C;
+    border-radius: 1em;
+    /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9); */
+    content: '';
+    height: 1em;
+    left: -.25em;
+    align-content: center;
+    /* margin-top: -.5em; */
+    position: absolute;
+    top: -.25em;
+    transition: all 0.3s ease-in-out;
+    width: 1em;
+}
+
+.material-switch>input[type="radio"]:checked+label::before {
+    background: inherit;
+    border-color: #ffa600;
+    opacity: 0.9;
+}
+
+.material-switch>input[type="radio"]:checked+label::after {
+    background: inherit;
+    background-color: #ffa600;
+    left: 1.25em
+}
+.material-switch>input[type="radio"]:disabled+label::before {
+    background: inherit;
+    border-color: #eeeeee;
+    opacity: 0.9;
+}
+.material-switch>input[type="radio"]:disabled+label::after {
+    background: inherit;
+    background-color: #eeeeee;
+    left: 1.25em
+}
+
+/* temporary version */
+.card-body {
+    background-color: white;
+}
+
+#sunburstcrumbs {
+    /* height: 40px; */
+    min-height: 90px;
+}
+
+
+svg a path:hover {
+    fill: purple;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}

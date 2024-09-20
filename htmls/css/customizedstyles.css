@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cambo&display=swap');
+
+
+html,
+body {
+    background-image: url("../back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Cambo', sans-serif;
+}
+
+svg a path:hover {
+    fill: purple;
+    color: #2F4B7C #7590AE #FFA600 #EEEEEE #FFFFFF
+}
